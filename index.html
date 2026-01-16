@@ -66,43 +66,6 @@
     const METADATA_FILE = "metadata-log.json";
     const HIERARCHY_FILE = "hierarchy-log.json";
 
-    // --- FALLBACK DATA ---
-    // This is used if hierarchy-log.json cannot be fetched
-    const FALLBACK_HIERARCHY = {
-      name: "Databases",
-      type: "root",
-      children: [
-        {
-          name: "mes",
-          type: "main-database",
-          children: [
-            {
-              name: "smartgateplus",
-              type: "sub-database",
-              children: [
-                { name: "dbo", type: "schema", children: [{ name: "setup_change_data", type: "table" }] },
-                { name: "dta", type: "schema", children: [{ name: "downtime_department", type: "table" }, { name: "downtime_with_reason", type: "table" }] },
-                { name: "master", type: "schema", children: [{ name: "recipe_production", type: "table" }] }
-              ]
-            }
-          ]
-        },
-        {
-          name: "sap",
-          type: "main-database",
-          children: [
-            {
-              name: "master",
-              type: "sub-database",
-              children: [
-                { name: "v1", type: "schema", children: [{ name: "BOM_details", type: "table" }, { name: "machine_capacity", type: "table" }] }
-              ]
-            }
-          ]
-        }
-      ]
-    };
-
     // --- ICONS ---
     const IconDatabase = ({ className }) => (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
