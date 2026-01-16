@@ -45,9 +45,9 @@
 <script type="importmap">
 {
   "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
@@ -487,6 +487,17 @@
         }
       };
 
+      const getCountLabel = () => {
+         if (!hasChildren) return null;
+         const count = props.node.children.length;
+         if (props.node.type === 'root') return `${count} Main DBs`;
+         if (props.node.type === 'main-database') return `${count} Sub DBs`;
+         if (props.node.type === 'sub-database') return `${count} Schemas`;
+         if (props.node.type === 'schema') return `${count} Tables`;
+         return `${count}`;
+      }
+      const countLabel = getCountLabel();
+
       return (
         <div className="relative">
           <div 
@@ -513,7 +524,14 @@
                 {props.node.type === 'table' && <IconTable className="w-5 h-5 text-brand-yellow" />}
             </span>
 
-            <span className="font-medium text-sm text-text-main flex-1 truncate select-none">{props.node.name}</span>
+            <div className="flex-1 flex items-center min-w-0">
+                <span className="font-medium text-sm text-text-main truncate select-none">{props.node.name}</span>
+                {countLabel && (
+                    <span className="ml-2 text-[10px] text-text-muted bg-white/5 px-1.5 py-0.5 rounded border border-white/10 whitespace-nowrap">
+                        {countLabel}
+                    </span>
+                )}
+            </div>
 
             {isTable && (
               <div className="flex items-center gap-1 mr-4 opacity-0 group-hover:opacity-100 transition-opacity">
