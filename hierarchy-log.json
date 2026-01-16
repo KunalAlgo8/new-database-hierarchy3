@@ -7,33 +7,94 @@
       "type": "main-database",
       "children": [
         {
-          "name": "smartgateplus",
-          "type": "sub-database",
-          "children": [
-            {
-              "name": "dbo",
-              "type": "schema",
-              "children": [
-                { "name": "setup_change_data", "type": "table" }
-              ]
-            },
-            {
-              "name": "dta",
-              "type": "schema",
-              "children": [
-                { "name": "downtime_department", "type": "table" },
-                { "name": "downtime_with_reason", "type": "table" }
-              ]
-            },
-            {
-              "name": "master",
-              "type": "schema",
-              "children": [
-                { "name": "recipe_production", "type": "table" }
-              ]
-            }
-          ]
-        },
+  "name": "smartgateplus",
+  "type": "sub-database",
+  "children": [
+    {
+      "name": "dbo",
+      "type": "schema",
+      "children": [
+        { "name": "AreaMaster", "type": "table" },
+        { "name": "CBMTagMaster", "type": "table" },
+        { "name": "EquipmentDownTimeMaster", "type": "table" },
+        { "name": "LastTransferDtandTime", "type": "table" },
+        { "name": "Production_Downtime", "type": "table" },
+        { "name": "TempTableToUpdateCycleTime", "type": "table" },
+        { "name": "UserDetails", "type": "table" },
+        { "name": "Utility_Area_Master", "type": "table" },
+        { "name": "Utility_Consumption", "type": "table" },
+        { "name": "Utility_LastTransferDtandTime", "type": "table" },
+        { "name": "Utility_Master", "type": "table" },
+        { "name": "Utility_Resource_Master", "type": "table" },
+        { "name": "Utility_Tag_Master", "type": "table" },
+        { "name": "Utility_Type_Master", "type": "table" },
+        { "name": "migrations", "type": "table" },
+        { "name": "plantMaster", "type": "table" },
+        { "name": "setup_change_data", "type": "table" },
+        { "name": "tblEquipmentMaster", "type": "table" }
+      ]
+    },
+    {
+      "name": "dta",
+      "type": "schema",
+      "children": [
+        { "name": "alerts", "type": "table" },
+        { "name": "downtime_department", "type": "table" },
+        { "name": "downtime_schedule", "type": "table" },
+        { "name": "downtime_with_reason", "type": "table" },
+        { "name": "dta_production_downtime", "type": "table" },
+        { "name": "dta_production_downtime15Dec2022", "type": "table" },
+        { "name": "reason_department_master", "type": "table" },
+        { "name": "reason_equipment_master", "type": "table" },
+        { "name": "reason_master", "type": "table" }
+      ]
+    },
+    {
+      "name": "cm",
+      "type": "schema",
+      "children": [
+        { "name": "AlarmConditionMaster", "type": "table" },
+        { "name": "TagMaster", "type": "table" },
+        { "name": "alarm_parameters", "type": "table" },
+        { "name": "alarms", "type": "table" },
+        { "name": "category_master", "type": "table" },
+        { "name": "generated_tickets", "type": "table" },
+        { "name": "severity_level_master", "type": "table" }
+      ]
+    },
+    {
+      "name": "ct",
+      "type": "schema",
+      "children": [
+        { "name": "recipe_master", "type": "table" }
+      ]
+    },
+    {
+      "name": "master",
+      "type": "schema",
+      "children": [
+        { "name": "area_master", "type": "table" },
+        { "name": "department_equipment_master", "type": "table" },
+        { "name": "department_groups", "type": "table" },
+        { "name": "department_master", "type": "table" },
+        { "name": "equipment_master", "type": "table" },
+        { "name": "equipment_speed", "type": "table" },
+        { "name": "mi_transactions", "type": "table" },
+        { "name": "operator_master", "type": "table" },
+        { "name": "permission_groups", "type": "table" },
+        { "name": "permissions", "type": "table" },
+        { "name": "plant_master", "type": "table" },
+        { "name": "production_type_master", "type": "table" },
+        { "name": "recipe_production", "type": "table" },
+        { "name": "role_permission", "type": "table" },
+        { "name": "roles", "type": "table" },
+        { "name": "user_plant", "type": "table" },
+        { "name": "user_sessions", "type": "table" },
+        { "name": "usersOLD", "type": "table" }
+      ]
+    }
+  ]
+},
         {
           "name": "smartiiotqa",
           "type": "sub-database",
