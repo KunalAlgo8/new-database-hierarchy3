@@ -1,5 +1,6 @@
 {
             "name": "Databases",
+            "type": "root",
             "children": [
                 {
                     "name": "mes",
@@ -174,10 +175,10 @@
                                     "type": "schema",
                                     "children": [
                                         { "name": "lotquarantine", "type": "table" },
-                                    { "name": "materialageupdate", "type": "table" },
-                                    { "name": "mi_daily", "type": "table" },
-                                    { "name": "mi_transactions", "type": "table" },
-                                    { "name": "testproc", "type": "table" }
+                                        { "name": "materialageupdate", "type": "table" },
+                                        { "name": "mi_daily", "type": "table" },
+                                        { "name": "mi_transactions", "type": "table" },
+                                        { "name": "testproc", "type": "table" }
                                     ]
                                 },
                                 {
